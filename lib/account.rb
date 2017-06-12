@@ -4,12 +4,12 @@ class Account
 
   attr_reader :balance
 
-   def initialize
+   def initialize(balance = 0)
      @balance = balance
    end
 
   def deposit(sum)
-    @balance =+ sum
+    @balance = @balance + sum
     @date = Date.today
   end
 
