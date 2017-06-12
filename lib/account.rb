@@ -13,4 +13,9 @@ class Account
     @date = Date.today
   end
 
+  def withdraw(sum)
+    @balance = @balance - sum
+    @date = Date.today
+  end
+
 end
