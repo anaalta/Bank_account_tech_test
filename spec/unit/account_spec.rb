@@ -14,4 +14,10 @@ describe Account do
     expect(account.balance).to eq (400)
   end
 
+  it 'saves the deposits and the dates in which they were made' do
+    account.deposit(1000);
+    account.deposit(200);
+    expect(account.deposits).to eq ([{Date.today => 1000}, {Date.today => 200}])
+  end
+
 end
