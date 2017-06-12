@@ -31,7 +31,7 @@ describe Account do
     account.deposit(2000);
     account.withdraw(200);
     account.withdraw(300);
-    expect(account.history).to eq ([{Date.today => 2000}, {Date.today => -200}, {Date.today => -300}])
+    expect(account.history).to eq ([{{Date.today => 2000} => 2000}, {{Date.today => -200} => 1800}, {{Date.today => -300} => 1500}])
   end
 
 end
