@@ -2,24 +2,23 @@ require 'date'
 
 class Account
 
-  attr_reader :balance, :deposits, :withdrawals
+  attr_reader :balance, :history
 
    def initialize(balance = 0)
      @balance = balance
-     @deposits = []
-     @withdrawals = []
+     @history = []
    end
 
   def deposit(sum)
     @balance = @balance + sum
     @date = Date.today
-    @deposits << {@date => sum}
+    @history << {@date => +sum}
   end
 
   def withdraw(sum)
     @balance = @balance - sum
     @date = Date.today
-    @withdrawals << {@date => sum}
+    @history << {@date => -sum}
   end
 
 end
